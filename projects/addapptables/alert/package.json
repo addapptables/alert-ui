@@ -1,0 +1,13 @@
+{
+  "name": "@addapptables/alert",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.1",
+    "@angular/core": "^7.2.1",
+    "@angular/material": "^7.2.2",
+    "@angular/cdk": "^7.2.2",
+    "@angular/animations": "^7.2.1",
+    "@ngx-translate/core": "^11.0.1",
+    "@addapptables/perfect-scrollbar": "^0.0.1"
+  }
+}
