@@ -9,5 +9,12 @@
     "@angular/animations": "^7.2.1",
     "@ngx-translate/core": "^11.0.1",
     "@addapptables/perfect-scrollbar": "^0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/addapptables/alert-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/addapptables/alert-ui/issues"
   }
 }
