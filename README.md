@@ -1,5 +1,7 @@
 # ADDAPPTABLES alert
 
+[See demo](http://addapptables.com/admin/components/modals-alerts)
+
 ## Getting Started
 To get started, lets install the package thru npm:
 
@@ -10,15 +12,24 @@ npm i @addapptables/alert --S
 Install peer dependencies
 
 ```
-npm i @addapptables/perfect-scrollbar @ngx-translate/core @angular/material @angular/cdk @angular/animations --S
+npm i
+@addapptables/perfect-scrollbar
+@ngx-translate/core
+@angular/material
+@angular/cdk
+@angular/animations --S
 ```
+
+## Configuration
+
+Configure @ngx-translate/core see [link](https://github.com/ngx-translate/core)
 
 ## How to use
 
 ```typescript
-import { AddapptableAlertModule } from '@addapptables/alert';
+import { AlertModule } from '@addapptables/alert';
 @NgModule({
-  imports: [AddapptableAlertModule]
+  imports: [AlertModule]
 })
 export class YourModule { }
 ```

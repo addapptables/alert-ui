@@ -37,4 +37,4 @@ import { AddapptablePerfectScrollbarModule } from '@addapptables/perfect-scrollb
     ErrorComponent
   ]
 })
-export class AddapptableAlertModule { }
+export class AlertModule { }
