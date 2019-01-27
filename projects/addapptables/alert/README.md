@@ -29,24 +29,36 @@ Configure @ngx-translate/core see [link](https://github.com/ngx-translate/core)
 ```typescript
 import { AlertModule } from '@addapptables/alert';
 @NgModule({
-  imports: [AlertModule]
+  imports: [AlertModule.forRoot()]
 })
-export class YourModule { }
+export class AppModule { }
 ```
 
 ```typescript
 @Component()
-export class AlertWarningComponent {
+export class AlertComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private _alertService: AlertService) { }
 
   openDialog() {
-    this.dialog.open(AddapptableDialogAlertComponent, {
-      width: '478px',
-      data: <AlertModel>{
-        type: AlertEnum.warning,
-        title: 'Warn',
-        text: 'Warning'
+    this._alertService.showSimple('Alert', 'Simple alert');
+    // this._alertService.showSuccess('Success', 'Saved successfully');
+    // this._alertService.showWarning('Warn', 'Warning');
+    // this._alertService.showInfo('Info', 'Information');
+    // this._alertService.showError('Error', 'Error');
+  }
+
+  openDialodgConfirmation(){
+    const dialog = this._alertService.showConfirmation('Confirmation', 'Are you sure delete alert?');
+    dialog.beforeClose().subscribe((result) => {
+      if (!result) { return; }
+      switch (result.result) {
+        case 'ok':
+          console.log('ok');
+          break;
+        case 'cancel':
+          console.log('cancel');
+          break;
       }
     });
   }

@@ -13,3 +13,4 @@ export * from './lib/components/addapptable-dialog-alert/components/error/error.
 export * from './lib/components/addapptable-dialog-alert/components/warning/warning.component';
 export * from './lib/models/alert-enum.model';
 export * from './lib/models/alert.model';
+export * from './lib/services/alert.service';
