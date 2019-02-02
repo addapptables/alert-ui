@@ -18,7 +18,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AlertModel } from '../../models/alert.model';
 import { alertComponents } from './components/components';
 import { PortalInjector } from '@angular/cdk/portal';
-import { DynamicDirective } from '@addapptables/perfect-scrollbar';
+import { DynamicDirective } from '@addapptables/core';
 
 export const ADDAPPTABLE_ALERT_DATA = new InjectionToken<any>('AddapptableAlertData');
 

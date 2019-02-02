@@ -5,7 +5,7 @@
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
       "@ngx-translate/core": "ngx-translate-core",
-      "@addapptables/perfect-scrollbar": "addapptables-perfect-scrollbar"
+      "@addapptables/core": "addapptables-core"
     }
   }
 }

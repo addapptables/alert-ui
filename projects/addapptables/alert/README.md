@@ -1,9 +1,11 @@
 # ADDAPPTABLES alert
 
+ADAPTABLES alert is a library for angular
+
 [See demo](http://addapptables.com/admin/components/modals-alerts)
 
 ## Getting Started
-To get started, lets install the package thru npm:
+To get started, let's install the package through npm:
 
 ```
 npm i @addapptables/alert --S
@@ -13,7 +15,7 @@ Install peer dependencies
 
 ```
 npm i
-@addapptables/perfect-scrollbar
+@addapptables/core
 @ngx-translate/core
 @angular/material
 @angular/cdk
@@ -22,9 +24,34 @@ npm i
 
 ## Configuration
 
-Configure @ngx-translate/core see [link](https://github.com/ngx-translate/core)
+- First, you have to configure the library @ngx-translate/core to have the translation into the alert
+
+The library is configured as follows:
+
+```typescript
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+@NgModule({
+    imports: [
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        })
+    ]
+})
+export class AppModule { }
+```
 
 ## How to use
+
+- Import the module AlertModule into the AppModule
 
 ```typescript
 import { AlertModule } from '@addapptables/alert';
@@ -69,11 +96,13 @@ export class AlertComponent {
     <button type="button" mat-raised-button color="primary" (click)="openDialog()">Alert warning</button>
 ```
 
+- Finaly, it is important to import the styles to the application
+
 ```scss
-@import '~@addapptables/alert/_addapptables-alert.theme.scss';
+@import '~@addapptables/alert/addapptables-alert.theme';
 
 $addapptable-theme-variables: (
-    color-blue: #20a9d2,
+    color-info: #20a9d2,
     color-success: #5cb85c,
     color-danger: #d43934,
     color-warning: #e09d3d
@@ -82,4 +111,10 @@ $addapptable-theme-variables: (
 body.theme-default {
     @include addapptable-alert($addapptable-theme-variables);
 }
+```
+
+- Do not forget to put the theme-default class in the html body
+
+```html
+<body class="theme-default"></body>
 ```

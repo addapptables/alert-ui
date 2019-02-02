@@ -11,7 +11,7 @@ import {
 } from './components/addapptable-dialog-alert/components/buttons/alert-cancel-button/alert-cancel-button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { AddapptablePerfectScrollbarModule } from '@addapptables/perfect-scrollbar';
+import { CoreModule } from '@addapptables/core';
 import { AlertService } from './services/alert.service';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { AlertService } from './services/alert.service';
     CommonModule,
     TranslateModule,
     MatButtonModule,
-    AddapptablePerfectScrollbarModule,
+    CoreModule,
     MatDialogModule
   ],
   declarations: [
