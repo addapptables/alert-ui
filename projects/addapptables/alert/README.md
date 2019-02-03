@@ -1,6 +1,6 @@
 # ADDAPPTABLES alert
 
-ADAPTABLES alert is a library for angular
+ADDAPPTABLES alert is a library for angular
 
 [See demo](http://addapptables.com/admin/components/modals-alerts)
 
