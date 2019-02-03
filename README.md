@@ -4,6 +4,8 @@ ADAPTABLES alert is a library for angular
 
 [See demo](http://addapptables.com/admin/components/modals-alerts)
 
+[Example code](https://stackblitz.com/edit/angular-alert-addapptables)
+
 ## Getting Started
 To get started, let's install the package through npm:
 
@@ -31,6 +33,7 @@ The library is configured as follows:
 ```typescript
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -54,9 +57,14 @@ export class AppModule { }
 - Import the module AlertModule into the AppModule
 
 ```typescript
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from '@addapptables/alert';
 @NgModule({
-  imports: [AlertModule.forRoot()]
+  imports: [
+      BrowserModule,
+      BrowserAnimationsModule,
+      AlertModule.forRoot()
+  ]
 })
 export class AppModule { }
 ```
@@ -100,7 +108,12 @@ export class AlertComponent {
 
 ```scss
 @import '~@addapptables/alert/addapptables-alert.theme';
+@import '~@angular/material/theming';
 
+$addapptable-app-primary: mat-palette($mat-teal, 800);
+$addapptable-app-accent:  mat-palette($mat-pink, 800, A100, 100);
+$addapptable-app-warn: mat-palette($mat-red);
+$addapptable-app-theme: mat-light-theme($addapptable-app-primary, $addapptable-app-accent, $addapptable-app-warn);
 $addapptable-theme-variables: (
     color-info: #20a9d2,
     color-success: #5cb85c,
@@ -108,7 +121,9 @@ $addapptable-theme-variables: (
     color-warning: #e09d3d
 );
 
-body.theme-default {
+@include mat-core();
+body.theme-default{
+    @include angular-material-theme($addapptable-app-theme);
     @include addapptable-alert($addapptable-theme-variables);
 }
 ```
