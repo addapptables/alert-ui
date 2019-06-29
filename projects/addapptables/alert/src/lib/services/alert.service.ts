@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { AlertModel } from '../models/alert.model';
 import { AlertEnum } from '../models/alert-enum.model';
 import { AddapptableDialogAlertComponent } from '../components/addapptable-dialog-alert/addapptable-dialog-alert.component';

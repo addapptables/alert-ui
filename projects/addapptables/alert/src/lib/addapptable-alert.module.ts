@@ -4,7 +4,8 @@ import { AlertSucessComponent } from './components/addapptable-dialog-alert/comp
 import { AlertInfoComponent } from './components/addapptable-dialog-alert/components/alert-info/alert-info.component';
 import { WarningComponent } from './components/addapptable-dialog-alert/components/warning/warning.component';
 import { ErrorComponent } from './components/addapptable-dialog-alert/components/error/error.component';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AlertOkButtonComponent } from './components/addapptable-dialog-alert/components/buttons/alert-ok-button/alert-ok-button.component';
 import {
   AlertCancelButtonComponent
